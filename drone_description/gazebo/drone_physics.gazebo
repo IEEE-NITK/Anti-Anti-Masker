@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<robot name="drone" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="std_friction" value="1.0" />
+<xacro:property name="rotor_friction" value="10.0" />
+
+<gazebo reference="base_link">
+  <mu1>${std_friction}</mu1>
+  <mu2>${std_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="rotor_right_1">
+  <mu1>${rotor_friction}</mu1>
+  <mu2>${rotor_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rotor_back_1">
+  <mu1>${rotor_friction}</mu1>
+  <mu2>${rotor_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rotor_left_1">
+  <mu1>${rotor_friction}</mu1>
+  <mu2>${rotor_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rotor_front_1">
+  <mu1>${rotor_friction}</mu1>
+  <mu2>${rotor_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <mu1>${std_friction}</mu1>
+  <mu2>${std_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_1">
+  <mu1>${std_friction}</mu1>
+  <mu2>${std_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>
