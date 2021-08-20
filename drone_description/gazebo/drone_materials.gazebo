@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot name="drone" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="rotor_color" value="Gazebo/Yellow" />
+<xacro:property name="sensor_color" value="Gazebo/Blue" />
+<xacro:property name="camera_color" value="Gazebo/Black" />
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="rotor_right_1">
+  <material>${rotor_color}</material>
+</gazebo>
+
+<gazebo reference="rotor_back_1">
+  <material>${rotor_color}</material>
+</gazebo>
+
+<gazebo reference="rotor_left_1">
+  <material>${rotor_color}</material>
+</gazebo>
+
+<gazebo reference="rotor_front_1">
+  <material>${rotor_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${sensor_color}</material>
+</gazebo>
+
+<gazebo reference="camera_1">
+  <material>${camera_color}</material>
+</gazebo>
+
+</robot>
