@@ -7,3 +7,24 @@ Anti-Anti-Masker is a drone that will roam in city crowded areas and search for 
 ### Project Members:
 1. Shobuj Paul
 2. Diptesh Banerjee
+
+### Simulation Instructions:
+
+- Clone the repository in the src folder in your workspace.
+```bash
+cd ~/catkin_ws/src/
+git clone git@github.com:IEEE-NITK/Anti-Anti-Masker.git drone
+```
+- Build your workspace.
+```bash
+cd ~/catkin_ws
+catkin build
+```
+- To view the drone model in gazebo environment run:
+```bash
+roslaunch drone_description gazebo.launch
+```
+- To open the model in RViz run:
+```bash
+roslaunch drone_description display.launch
+```
