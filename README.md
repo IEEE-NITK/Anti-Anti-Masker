@@ -1,8 +1,13 @@
 # Anti-Anti-Masker Drone
 
-## Project Members:
+## Project Mentors:
 1. Shobuj Paul
 2. Diptesh Banerjee
+
+## Project Members:
+1. Shivani Chanda
+2. Spandan Patkar
+3. Sunaina Sunil
 
 ## Introduction:
 <p>Anti-Anti-Masker is a drone that will roam in crowded city areas and search for people who are not wearing masks and breaking covid protocols. This project can have many other applications, such as security and surveillance.</p>
