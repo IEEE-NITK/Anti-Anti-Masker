@@ -21,7 +21,7 @@ The model will be built over the MobileNet TensorFlow model. MobileNet is used b
 The Dataset used is : 
 [With/Without Mask Dataset](https://www.kaggle.com/niharika41298/withwithout-mask)
 
-The model code: [The notebook](drone_vision/Detection_Model.ipynb)
+The model code: [The notebook](drone_vision/notebooks/Detection_Model.ipynb)
 
 The model structure:
 ```
@@ -41,6 +41,8 @@ for layer in baseModel.layers:
 ```
 Accuracy:  
 <img src="assets/Pictures/accuracy curve.png" alt="Accuracy" style="height: 400px; width:600px;"/>
+
+For TensorFlow 2 installation refer to this link: [TensorFlow Installation](drone_vision/README.md)
 
 ## Drone 3D Model
 
