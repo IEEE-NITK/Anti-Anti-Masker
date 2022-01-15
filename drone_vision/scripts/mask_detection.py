@@ -27,6 +27,8 @@ def main():
 
     while True:
         ret, frame = cap.read()
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)
         if not ret:
             print("Cannot receive frame (stream end?). Exiting ...")
             break
