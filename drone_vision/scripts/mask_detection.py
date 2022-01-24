@@ -27,6 +27,7 @@ def main():
 
     while True:
         ret, frame = cap.read()
+        frame0 = frame
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)
         if not ret:
@@ -36,10 +37,10 @@ def main():
         networkOutput1, networkOutput2 = mask_detection(frame)
         non_mask, mask = "Non-Mask: " + str(networkOutput1), "Mask: " + str(networkOutput2)
         
-        frame = cv2.putText(frame, non_mask, (0,450), cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0,0,255), thickness=2)
-        frame = cv2.putText(frame, mask, (0,400), cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0,0,255), thickness=2)
+        frame0 = cv2.putText(frame0, non_mask, (0,450), cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0,0,255), thickness=2)
+        frame0 = cv2.putText(frame0, mask, (0,400), cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0,0,255), thickness=2)
 
-        cv2.imshow("Mask Detection", frame)
+        cv2.imshow("Mask Detection", frame0)
         k = cv2.waitKey(1)
         if k == ord('s'):
             break
