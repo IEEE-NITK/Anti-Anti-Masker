@@ -6,187 +6,151 @@
 <xacro:include filename="$(find drone_description)/gazebo/drone_materials.gazebo" />
 <xacro:include filename="$(find drone_description)/gazebo/drone_physics.gazebo" />
 <xacro:include filename="$(find drone_description)/gazebo/drone_plugins.gazebo" />
-<link name="dummy">
-</link>
-<link name="base_link">
-  <inertial>
-    <origin rpy="0 0 0" xyz="1.456933785218452e-13 0.0 0.03735496105421699"/>
-    <mass value="5.232628861646594"/>
-    <inertia ixx="0.026182" ixy="-0.0" ixz="0.0" iyy="0.026182" iyz="0.0" izz="0.051223"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
+<link name="base_footprint">
 </link>
 
-<link name="rotor_right_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-1.7457429578916956e-13 0.0 0.018878199870611956"/>
-    <mass value="0.09624810789637253"/>
-    <inertia ixx="4e-06" ixy="0.0" ixz="-0.0" iyy="0.000233" iyz="0.0" izz="0.000234"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0 0.15 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_right_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0 0.15 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_right_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="rotor_back_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0 -1.7457429578916956e-13 0.018878199870611956"/>
-    <mass value="0.09624810789637253"/>
-    <inertia ixx="0.000233" ixy="-0.0" ixz="0.0" iyy="4e-06" iyz="-0.0" izz="0.000234"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_back_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_back_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="rotor_left_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-1.7457429578916956e-13 0.0 0.018878199870611956"/>
-    <mass value="0.09624810789637253"/>
-    <inertia ixx="4e-06" ixy="0.0" ixz="-0.0" iyy="0.000233" iyz="-0.0" izz="0.000234"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0 -0.15 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_left_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0 -0.15 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_left_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="rotor_front_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0 -1.7457429578916956e-13 0.018878199870611956"/>
-    <mass value="0.09624810789637253"/>
-    <inertia ixx="0.000233" ixy="-0.0" ixz="-0.0" iyy="4e-06" iyz="-0.0" izz="0.000234"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_front_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.04"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/rotor_front_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="lidar_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.0002811593130683333 2.4598252538209895e-05 0.013269030965666326"/>
-    <mass value="0.10239819188665075"/>
-    <inertia ixx="1.4e-05" ixy="-0.0" ixz="0.0" iyy="1.4e-05" iyz="-0.0" izz="1e-05"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.07"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.07"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<link name="camera_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0069769858851688035 -0.0006104071705326543 -4.905906650642944e-07"/>
-    <mass value="0.008573825869931934"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.084647"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver_default"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.084647"/>
-    <geometry>
-      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
-<joint name="dummy_joint" type="fixed">
-  <parent link="dummy"/>
+<joint name="base_joint" type="fixed">
+  <parent link="base_footprint"/>
   <child link="base_link"/>
 </joint>
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <mass value="5.232628861646594"/>
+    <inertia ixx="0.026182" ixy="1e-4" ixz="1e-4" iyy="0.026182" iyz="1e-4" izz="0.051223"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="motor_right" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 -0.15 0.04"/>
   <parent link="base_link"/>
   <child link="rotor_right_1"/>
+  <dynamics damping="0.7"/>
   <axis xyz="0.0 0.0 1.0"/>
 </joint>
+
+<link name="rotor_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.7457429578916956e-13 0.0 0.018878199870611956"/>
+    <mass value="0.09624810789637253"/>
+    <inertia ixx="4e-06" ixy="1e-4" ixz="1e-4" iyy="0.000233" iyz="1e-4" izz="0.000234"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.15 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.15 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="motor_back" type="continuous">
   <origin rpy="0 0 0" xyz="-0.15 0.0 0.04"/>
   <parent link="base_link"/>
   <child link="rotor_back_1"/>
+  <dynamics damping="0.7"/>
   <axis xyz="0.0 0.0 1.0"/>
 </joint>
+
+<link name="rotor_back_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -1.7457429578916956e-13 0.018878199870611956"/>
+    <mass value="0.09624810789637253"/>
+    <inertia ixx="0.000233" ixy="1e-4" ixz="1e-4" iyy="4e-06" iyz="1e-4" izz="0.000234"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="motor_left" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 0.15 0.04"/>
   <parent link="base_link"/>
   <child link="rotor_left_1"/>
+  <dynamics damping="0.7"/>
   <axis xyz="0.0 0.0 1.0"/>
 </joint>
+
+
+<link name="rotor_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.7457429578916956e-13 0.0 0.018878199870611956"/>
+    <mass value="0.09624810789637253"/>
+    <inertia ixx="4e-06" ixy="1e-4" ixz="1e-4" iyy="0.000233" iyz="1e-4" izz="0.000234"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.15 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.15 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="motor_front" type="continuous">
   <origin rpy="0 0 0" xyz="0.15 0.0 0.04"/>
   <parent link="base_link"/>
   <child link="rotor_front_1"/>
+  <dynamics damping="0.7"/>
   <axis xyz="0.0 0.0 1.0"/>
 </joint>
+
+<link name="rotor_front_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -1.7457429578916956e-13 0.018878199870611956"/>
+    <mass value="0.09624810789637253"/>
+    <inertia ixx="0.000233" ixy="1e-4" ixz="1e-4" iyy="4e-06" iyz="1e-4" izz="0.000234"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/rotor_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 <joint name="lidar_joint" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 0.0 0.07"/>
@@ -194,10 +158,52 @@
   <child link="lidar_1"/>
 </joint>
 
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0002811593130683333 2.4598252538209895e-05 0.013269030965666326"/>
+    <mass value="0.10239819188665075"/>
+    <inertia ixx="1.4e-05" ixy="1e-4" ixz="1e-4" iyy="1.4e-05" iyz="1e-4" izz="1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.07"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.07"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
 <joint name="camera_joint" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 -0.0 0.014647"/>
   <parent link="lidar_1"/>
   <child link="camera_1"/>
 </joint>
+
+<link name="camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0069769858851688035 -0.0006104071705326543 -4.905906650642944e-07"/>
+    <mass value="0.008573825869931934"/>
+    <inertia ixx="1e-4" ixy="1e-4" ixz="1e-4" iyy="1e-4" iyz="1e-4" izz="1e-4"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.084647"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0 -0.084647"/>
+    <geometry>
+      <mesh filename="package://drone_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
 
 </robot>
