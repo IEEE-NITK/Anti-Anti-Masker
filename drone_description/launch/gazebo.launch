@@ -1,8 +1,17 @@
 <launch>
   <param command="$(find xacro)/xacro $(find drone_description)/urdf/drone.xacro" name="robot_description"/>
   <node args="-param robot_description -urdf -model drone" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <node args="0.0 0.0 0.0 0.0 0.0 0.0 base_footprint base_link" pkg="tf2_ros" type="static_transform_publisher" name="base_link_tf"/>
+  <node args="0.15 0.0 0.04 0.0 0.0 0.0 base_link rotor_front_1" pkg="tf2_ros" type="static_transform_publisher" name="rotor_front_tf"/>
+  <node args="0.0 0.15 0.04 0.0 0.0 0.0 base_link rotor_left_1" pkg="tf2_ros" type="static_transform_publisher" name="rotor_left_tf"/>
+  <node args="-0.15 0.0 0.04 0.0 0.0 0.0 base_link rotor_back_1" pkg="tf2_ros" type="static_transform_publisher" name="rotor_back_tf"/>
+  <node args="0.0 -0.15 0.04 0.0 0.0 0.0 base_link rotor_right_1" pkg="tf2_ros" type="static_transform_publisher" name="rotor_right_tf"/>
+  <node args="0.0 0.0 0.07 0.0 0.0 0.0 base_link lidar_1" pkg="tf2_ros" type="static_transform_publisher" name="lidar_link_tf"/>
+  <node args="0.0 -0.0 0.014647 0.0 0.0 0.0 lidar_1 camera_1" pkg="tf2_ros" type="static_transform_publisher" name="camera_link_tf"/>
+  <!--<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="paused" value="true"/>
+    <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
