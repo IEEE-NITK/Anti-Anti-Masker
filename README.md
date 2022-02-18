@@ -53,10 +53,31 @@ Drone Model:
 - The drone was designed in Fusion360 and converted to URDF file format using [fusion2urdf](https://github.com/syuntoku14/fusion2urdf) plugin.
 - GPU Laser plugin was used for simulating LIDAR data and camera plugin was used to get raw video feed from the camera link.
 - All four rotors show motion. Aerodynamics will be set later.
+- Gazebo is an open source 3D simulator that comes with ROS. It is used to simulate the drone in a customized 3D environment along with extensive dynamic interaction with the drone and the environment.
 
 Drone Sensors:
 <br>
 <img src="assets/Pictures/drone_sensor_rviz.png" alt="Accuracy" style="height: 330px; width:525px;"> 
+
+- RViz is a primary visualizer in ROS that 
+Drone Control:
+<br>
+
+
+## Prerequisites on PC 
+
+- Ubuntu 20.04
+- ROS Noetic
+
+ROS Dependencies:
+<br>
+- Catkin
+- roscpp
+- rospy
+- std_msgs
+- message_generation
+- message_runtime 
+
 
 ## Simulation Instructions:
 
