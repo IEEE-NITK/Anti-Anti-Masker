@@ -1,13 +1,8 @@
 # Anti-Anti-Masker Drone
-
-## Project Mentors:
-1. Shobuj Paul
-2. Diptesh Banerjee
-
-## Project Members:
-1. Shivani Chanda
-2. Spandan Patkar
-3. Sunaina Sunil
+[![GitHub issues](https://img.shields.io/github/issues/IEEE-NITK/Anti-Anti-Masker?color=red&label=Issues&style=plastic)](https://github.com/IEEE-NITK/Anti-Anti-Masker/issues)
+[![GitHub license](https://img.shields.io/github/license/IEEE-NITK/Anti-Anti-Masker?color=orange&label=License&style=plastic)](https://github.com/IEEE-NITK/Anti-Anti-Masker/blob/main/LICENSE)
+![Ubuntu](https://img.shields.io/badge/Ubuntu%2020.04-%E2%9C%94-yellow)
+![ROS Noetic](https://img.shields.io/badge/ROS%20Noetic-%E2%9C%94-yellow)
 
 ## Introduction:
 <p>Anti-Anti-Masker is a drone that will roam in crowded city areas and search for people who are not wearing masks and breaking covid protocols. This project can have many other applications, such as security and surveillance.</p>
@@ -46,22 +41,33 @@ For TensorFlow 2 installation refer to this link: [TensorFlow Installation](dron
 
 ## Drone 3D Model
 
-Drone Model:
+Drone Model: *Building the Drone*
 <br>
 <img src="assets/Pictures/drone_model_gazebo.jpg" alt="Accuracy" style="height: 330px; width:525px;">
 
 - The drone was designed in Fusion360 and converted to URDF file format using [fusion2urdf](https://github.com/syuntoku14/fusion2urdf) plugin.
 - GPU Laser plugin was used for simulating LIDAR data and camera plugin was used to get raw video feed from the camera link.
 - All four rotors show motion. Aerodynamics will be set later.
-- Gazebo is an open source 3D simulator that comes with ROS. It is used to simulate the drone in a customized 3D environment along with extensive dynamic interaction with the drone and the environment.
+- Gazebo is an open source 3D simulator that comes inbuilt with ROS. It is used to simulate the drone in a customized 3D environment along with extensive dynamic interaction between the drone and the environment.
+- After designing the drone model, **URDF_Exporter** (tools < add-ins) can be used to create URDF files.
+- To launch the drone in Gazebo Environment use the following command: 
+```bash
+roslaunch drone_description gazebo.launch
+```
 
-Drone Sensors:
+Drone Sensors: *Visuaizing Data*
 <br>
 <img src="assets/Pictures/drone_sensor_rviz.png" alt="Accuracy" style="height: 330px; width:525px;"> 
 
-- RViz is a primary visualizer in ROS that 
+- Rviz is the primary visualizer in ROS that displays data such as sensor information and pictures gathered from devices like sensors and cameras. Using Rviz plug-ins, we can set up virtual environments to view features such as local position, lidar data and more.
+ 
 Drone Control:
 <br>
+A PID (proportional–integral–derivative) controller is used for drone control. A PID controller is a control loop feedback mechanism that calculates the difference between a desired setpoint and the actual output from a process, and uses the result to apply a correction to the process. The PID controller objective is to reduce the error by adjusting a variable, such as the position of a robot arm or a robot car. 
+
+While using realtime controllers, inertia elements of zero (or almost zero) can cause the robot model to collapse without warning, and all links will appear with their origins coinciding with the world origin. 
+Source: http://wiki.ros.org/urdf/Tutorials/Adding%20Physical%20and%20Collision%20Properties%20to%20a%20URDF%20Model
+
 
 
 ## Prerequisites on PC 
@@ -99,3 +105,15 @@ roslaunch drone_description gazebo.launch
 ```bash
 roslaunch drone_description display.launch
 ```
+
+## Project Mentors:
+1. [Shobuj Paul](https://github.com/Shobuj-Paul)
+2. [Diptesh Banerjee](https://github.com/bdiptesh99)
+
+## Project Members:
+1. [Shivani Chanda](https://github.com/Shivani-Chanda)
+2. [Spandan Patkar](https://github.com/SpandanPatkar)
+3. [Sunaina Sunil](https://github.com/SunainaSunil)
+
+## License
+This repository is licensed under the [MIT License](https://github.com/IEEE-NITK/Anti-Anti-Masker/blob/main/LICENSE).
