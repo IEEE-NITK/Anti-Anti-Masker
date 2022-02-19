@@ -11,10 +11,28 @@
 <br>
 The model will be built over the MobileNet TensorFlow model. MobileNet is used because this model is easily applicable to devices like Rasberry Pi and Arduino. The model will be trained on some real-time images so that it can detect faces and masks properly. The trained model will be exported to OpenCV where it will be used to classify masks in real-time videos.</p>
 
-## Computer Vision
+## Training Dataset
 
 The Dataset used is : 
 [With/Without Mask Dataset](https://www.kaggle.com/niharika41298/withwithout-mask)
+
+- The Training dataset for this particular model has been created with the help of the repository : [Masking code](https://github.com/prajnasb/observations/tree/master/mask_classifier/Data_Generator)
+- The Training dataset includes both non-masked and masked images (black and white coloured masks used).
+- The model has been trained on grayscale images stretched to 224x224 resolution, augmented to include:
+<br><t>1. Outputs per training example: 3 </t>
+<br><t>2. Rotation: Between -10° and +10°</t>
+<br><t>3. Shear: ±10° Horizontal, ±10° Vertical</t>
+<br><t>4. Blur: Up to 1.5px</t>
+<br><t>5. Noise: Up to 1% of pixel</t>
+- Augmentation has been carried out on using [Roboflow](https://app.roboflow.com/)
+<br>
+<br>
+### Sample Images from dataset:
+<img src="assets/Pictures/Sample_Dataset.png" alt="Accuracy" style="height: 400px; width:600px;"/>
+<br>
+<br>
+
+## Computer Vision
 
 The model code: [The notebook](drone_vision/notebooks/Detection_Model.ipynb)
 
@@ -37,7 +55,7 @@ for layer in baseModel.layers:
 Accuracy:  
 <img src="assets/Pictures/accuracy curve.png" alt="Accuracy" style="height: 400px; width:600px;"/>
 
-For TensorFlow 2 installation refer to this link: [TensorFlow Installation](drone_vision/README.md)
+<!--For TensorFlow 2 installation refer to this link: [TensorFlow Installation](drone_vision/README.md)-->
 
 ## Drone 3D Model
 
@@ -84,13 +102,22 @@ ROS Dependencies:
 - message_generation
 - message_runtime 
 
+Computer Vision Dependencies:
+<br>
+- Tensorflow Version 2.3.0
+- CUDA 10.1
+- OpenCV2
+<br>
+**For CUDA and Tensorflow Installation Guide : [TensorFlow Installation](drone_vision/README.md)
+
+
 
 ## Simulation Instructions:
 
 - Clone the repository in the src folder in your workspace.
 ```bash
 cd ~/ros_ws/src/
-git clone git@github.com:IEEE-NITK/Anti-Anti-Masker.git drone
+git clone https://github.com/IEEE-NITK/Anti-Anti-Masker.git
 ```
 - Build your workspace.
 ```bash
