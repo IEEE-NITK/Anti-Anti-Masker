@@ -108,7 +108,7 @@ Computer Vision Dependencies:
 - CUDA 10.1
 - OpenCV2
 <br>
-**For CUDA and Tensorflow Installation Guide : [TensorFlow Installation](drone_vision/README.md)
+For TensorFlow & CUDA installation refer to this link: [TensorFlow Installation](drone_vision/README.md)
 
 
 
