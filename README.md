@@ -93,20 +93,12 @@ Source: http://wiki.ros.org/urdf/Tutorials/Adding%20Physical%20and%20Collision%2
 - Ubuntu 20.04
 - ROS Noetic
 
-ROS Dependencies:
-<br>
-- Catkin
-- roscpp
-- rospy
-- std_msgs
-- message_generation
-- message_runtime 
-
 Computer Vision Dependencies:
 <br>
-- Tensorflow Version 2.3.0
+- Tensorflow 2.3.0
+- CuDNN 
 - CUDA 10.1
-- OpenCV2
+- OpenCV 4.5.x
 <br>
 For TensorFlow & CUDA installation refer to this link: [TensorFlow Installation](drone_vision/README.md)
 
