@@ -11,27 +11,6 @@
 <br>
 The model will be built over the MobileNet TensorFlow model. MobileNet is used because this model is easily applicable to devices like Rasberry Pi and Arduino. The model will be trained on some real-time images so that it can detect faces and masks properly. The trained model will be exported to OpenCV where it will be used to classify masks in real-time videos.</p>
 
-## Training Dataset
-
-The Dataset used is : 
-[With/Without Mask Dataset](https://www.kaggle.com/niharika41298/withwithout-mask)
-
-- The Training dataset for this particular model has been created with the help of the repository : [Masking code](https://github.com/prajnasb/observations/tree/master/mask_classifier/Data_Generator)
-- The Training dataset includes both non-masked and masked images (black and white coloured masks used).
-- The model has been trained on grayscale images stretched to 224x224 resolution, augmented to include:
-<br><t>1. Outputs per training example: 3 </t>
-<br><t>2. Rotation: Between -10° and +10°</t>
-<br><t>3. Shear: ±10° Horizontal, ±10° Vertical</t>
-<br><t>4. Blur: Up to 1.5px</t>
-<br><t>5. Noise: Up to 1% of pixel</t>
-- Augmentation has been carried out on using [Roboflow](https://app.roboflow.com/)
-<br>
-<br>
-### Sample Images from dataset:
-<img src="assets/Pictures/Sample_Dataset.png" alt="Accuracy" style="height: 400px; width:600px;"/>
-<br>
-<br>
-
 ## Computer Vision
 
 The model code: [The notebook](drone_vision/notebooks/Detection_Model.ipynb)
@@ -57,6 +36,28 @@ Accuracy:
 
 <!--For TensorFlow 2 installation refer to this link: [TensorFlow Installation](drone_vision/README.md)-->
 
+## Training Dataset
+
+The Dataset used is : 
+[With/Without Mask Dataset](https://www.kaggle.com/niharika41298/withwithout-mask)
+
+- The Training dataset for this particular model has been created with the help of the repository : [Masking code](https://github.com/prajnasb/observations/tree/master/mask_classifier/Data_Generator)
+- The Training dataset includes both non-masked and masked images (black and white coloured masks used).
+- The model has been trained on grayscale images stretched to 224x224 resolution, augmented to include:
+<br><t>1. Outputs per training example: 3 </t>
+<br><t>2. Rotation: Between -10° and +10°</t>
+<br><t>3. Shear: ±10° Horizontal, ±10° Vertical</t>
+<br><t>4. Blur: Up to 1.5px</t>
+<br><t>5. Noise: Up to 1% of pixel</t>
+- Augmentation has been carried out using [Roboflow](https://app.roboflow.com/)
+<br>
+<br>
+
+### Sample Images from dataset:
+<img src="assets/Pictures/Sample_Dataset.png" alt="Accuracy" style="height: 400px; width:600px;"/>
+<br>
+<br>
+
 ## Drone 3D Model
 
 Drone Model: *Building the Drone*
@@ -79,7 +80,7 @@ Drone Sensors: *Visuaizing Data*
 
 - Rviz is the primary visualizer in ROS that displays data such as sensor information and pictures gathered from devices like sensors and cameras. Using Rviz plug-ins, we can set up virtual environments to view features such as local position, lidar data and more.
  
-Drone Control:
+### Drone Control:
 <br>
 A PID (proportional–integral–derivative) controller is used for drone control. A PID controller is a control loop feedback mechanism that calculates the difference between a desired setpoint and the actual output from a process, and uses the result to apply a correction to the process. The PID controller objective is to reduce the error by adjusting a variable, such as the position of a robot arm or a robot car. 
 
@@ -108,6 +109,7 @@ Computer Vision Dependencies:
 - CUDA 10.1
 - OpenCV2
 <br>
+
 For TensorFlow & CUDA installation refer to this link: [TensorFlow Installation](drone_vision/README.md)
 
 
