@@ -20,20 +20,20 @@ ROS is an open-source, meta-operating system to operate robots. ROS provides the
 
 ### Basic Terminology:
 
-Nodes: A node is an executable that uses ROS to communicate with other nodes.
+- Nodes: A node is an executable that uses ROS to communicate with other nodes.
 A ROS Node can be a Publisher or a Subscriber. A Publisher puts the messages of a standard message type to a particular topic. The Subscriber, on the other hand, subscribes to the topic and receives the messages that are published to the topic.
-Messages: ROS data type used upon subscribing or publishing to a topic.
-Topics: Nodes can publish messages to a topic as well as subscribe to a topic to receive messages.
-Master: Name service for ROS (i.e. helps nodes find each other)
-rosout: ROS equivalent of stdout/stderr
-roscore: Master + rosout + parameter server (parameter server will be introduced later)
+- Messages: ROS data type used upon subscribing or publishing to a topic.
+- Topics: Nodes can publish messages to a topic as well as subscribe to a topic to receive messages.
+- Master: Name service for ROS (i.e. helps nodes find each other)
+- rosout: ROS equivalent of stdout/stderr
+- roscore: Master + rosout + parameter server (parameter server will be introduced later)
 
 Client libraries needed:
 rospy: python client library
 roscpp: c++ client library
 
 
-### Turtlesim:S
+### Turtlesim:
 Turtlesim is a simple simulator used to understand ROS. Turtlesim gives a basic idea of what one can do with a real robot using ROS. Simulating turtlesim can be done using python code or a keypad. To execute teleoperation in turtlesim, turtle_teleop_key is used.
 
 <!--img/gif…………pics can be added of turtlebot-->
@@ -41,6 +41,7 @@ Turtlesim is a simple simulator used to understand ROS. Turtlesim gives a basic 
 The Anti-Anti-Masker drone can be described as a turtlebot driven at a height.
 <!--Embedathon: video need to be recorded of task 3-->
 
+<br>
 
 ## Prerequisites on PC 
 
