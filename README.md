@@ -7,11 +7,13 @@
 <hr>
 
 ## Introduction:
-<p>Anti-Anti-Masker is a drone that will roam in crowded city areas and search for people who are not wearing masks and breaking covid protocols. This project can have many other applications, such as security and surveillance.</p>
-<p>We have used Fusion360 to design the drone body, rotors and sensor links and then generate its URDF. We have used ROS to design the robot’s physics and simulate the robot. The end plan is to have <em>/cmd_vel</em> topic configured with the robot to pass velocity commands to <em>move_base</em> and use the navigation stack for mapping and motion.</p>  
-<p>This drone will have a camera that will have a face recognition system to detect faces without a mask.
-<br>
-The model will be built over the MobileNet TensorFlow model. MobileNet is used because this model is easily applicable to devices like Rasberry Pi and Arduino. The model will be trained on some real-time images so that it can detect faces and masks properly. The trained model will be exported to OpenCV where it will be used to classify masks in real-time videos.</p>
+The COVID-19 pandemic saw a surge in cases of the SARS-COV-2 virus infection all across the globe starting from the beginning of 2020. It was quite surprising to notice the fact that the possibility of infection could be reduced by a huge margin through certain disciplinary habits like washing hands with soap regularly, maintaining social distance, not gathering publicly in a crowd and wearing a mask in public spaces.
+
+Unfortunately enough, there are a huge number of people who refuse to wear a mask, because of many unintelligent and baseless reasons. 
+
+The project ‘Anti-Anti-Maskers’ is an attempt to deal with such a situation, wherein we use a drone utilising Artificial Intelligence for automatic detection of and differentiation between 
+Masked and Unmasked people.
+
 
 ## Literature Survey
 
@@ -37,12 +39,18 @@ roscpp: c++ client library
 ### Turtlesim:
 Turtlesim is a simple simulator used to understand ROS. Turtlesim gives a basic idea of what one can do with a real robot using ROS. Simulating turtlesim can be done using python code or a keypad. To execute teleoperation in turtlesim, turtle_teleop_key is used.
 
-<!--img/gif…………pics can be added of turtlebot-->
+![TURTLEBOT](https://user-images.githubusercontent.com/93539029/157951742-3e9205f8-5f73-4468-9076-3a14c9fb324e.jpg)
+
+
 
 The Anti-Anti-Masker drone can be described as a turtlebot driven at a height.
 <!--Embedathon: video need to be recorded of task 3-->
 
 <br>
+
+https://user-images.githubusercontent.com/93539029/157950304-11170f8b-90b8-49ac-baec-301a910d3653.mp4
+
+
 
 ## Prerequisites on PC 
 
