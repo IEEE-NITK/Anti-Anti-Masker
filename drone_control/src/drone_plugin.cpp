@@ -1,4 +1,5 @@
 #include <drone_control/drone_plugin.h>
+#include <ignition/math/Vector3.hh>
 #ifdef ENABLE_PROFILER
 #include <ignition/common/Profiler.hh>
 #endif
@@ -182,8 +183,7 @@ namespace gazebo
     parent_->SetLinearVel(ignition::math::Vector3d(
           x_ * cosf(yaw) - y_ * sinf(yaw),
           y_ * cosf(yaw) + x_ * sinf(yaw),
-          z_,
-          0));
+          z_));
     parent_->SetAngularVel(ignition::math::Vector3d(0, 0, rot_));
 #ifdef ENABLE_PROFILER
     IGN_PROFILE_END();
