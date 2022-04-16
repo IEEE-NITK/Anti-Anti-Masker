@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from sensor_msgs.msg import Image
-from drone_vision.msg import Mask
+from drone_vision.msg import Mask  ## importing message from .msg file
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
 import numpy as np
@@ -34,6 +34,7 @@ class image():
 		self.mask_pub.publish(self.mask_msg)
 		self.rate.sleep()	
 	
+	## from mask_detection
 	def classify_images(self):
 		# Load a model imported from Tensorflow
 		tensorflowNet = cv2.dnn.readNetFromTensorflow('../frozen_models/frozen_graph.pb', '../frozen_models/model.pbtxt')
